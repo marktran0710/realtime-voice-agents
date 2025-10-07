@@ -1,0 +1,1 @@
+Start with: "Hi there, please tell me about your property like location, type, size, and number of rooms."

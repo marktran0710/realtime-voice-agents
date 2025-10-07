@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>OpenAI Realtime Voice – Minimal (no setSinkId)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="index.css" />
+    <style>
+    #visualizer {
+      width: 100%;
+      height: 100px;
+      background-color: #f0f0f0;
+    }
+    button {
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>OpenAI Realtime Voice – Minimal 3</h1>
+  <div>
+    <button id="start">Start</button>
+    <button id="stop" disabled>Stop</button>
+    <button id="ping" disabled>Ping</button>
+    <button id="beep">Beep</button>
+  </div>
+  <h2>Audio Visualizer</h2>
+  <canvas id="visualizer"></canvas>
+  <div id="audio-container" style="margin: 1rem 0"></div>
+  <!-- <pre id="log"></pre> -->
+
+  <div class="tab-container">
+    <div class="tab-buttons">
+      <div class="tab-button active" onclick="openTab(1)">PROMPTS</div>
+      <div class="tab-button" onclick="openTab(2)">LOG</div>
+      <div class="tab-button" onclick="openTab(3)">TOKEN USAGE</div>
+    </div>
+    <div class="tab-content active prompts" id="tab1">
+      <div style="margin-bottom: 20px">
+        <h4>Overall Instruction</h4>
+        <textarea id="prompts-instructions" class="prompts-textarea"></textarea>
+        <div style="display: flex; justify-content: flex-end">
+          <button class="prompts update-btn" onclick="updateText('instructions')">
+            Update
+          </button>
+        </div>
+      </div>
+      <div>
+        <h4>Greetings</h4>
+        <textarea id="prompts-greetings" class="prompts-textarea"></textarea>
+        <div style="display: flex; justify-content: flex-end">
+          <button class="prompts update-btn" onclick="updateText('greetings')">
+            Update
+          </button>
+        </div>
+      </div>
+      <div>
+        <h4>Location instruction</h4>
+        <textarea id="prompts-location-instruction" class="prompts-textarea"></textarea>
+        <div style="display: flex; justify-content: flex-end">
+          <button class="prompts update-btn" onclick="updateText('locationInstruction')">
+            Update
+          </button>
+        </div>
+      </div>
+      <div>
+        <h4>Property instruction</h4>
+        <textarea id="prompts-property-instruction" class="prompts-textarea"></textarea>
+        <div style="display: flex; justify-content: flex-end">
+          <button class="prompts update-btn" onclick="updateText('propertyTypeInstruction')">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content log" id="tab2">
+      <textarea id="log-content" readonly class="textarea">
+Show LOG in here</textarea>
+    </div>
+    <div class="tab-content token-usage" id="tab3">
+      <p id="token-usage-content" class="textarea">
+        Show TOKEN USAGE in here
+      </p>
+      <table id="token-usage-table">
+        <thead>
+          <tr>
+            <th>Turn</th>
+            <th>Type</th>
+            <th>Total Tokens</th>
+            <th>Text Tokens</th>
+            <th>Audio Tokens</th>
+            <th>Cached Text Tokens</th>
+            <th>Cached Audio Tokens</th>
+            <th>Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS will fill this -->
+        </tbody>
+        <p>
+          Cost per token details:</br></br>
+          Audio input: 0.000032;</br>
+          Text input: 0.000004;</br></br>
+
+          Audio output: 0.000064;</br>
+          Text output: 0.000004;</br></br>
+
+          Cached audio tokens: 0.0000004;</br>
+          Cached text tokens: 0.0000004;</br>
+        </p>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+    integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="calculateCost.js"></script>
+  <script src="handleAudio.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

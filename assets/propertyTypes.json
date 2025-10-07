@@ -1,0 +1,83 @@
+[
+  {
+    "type": "Apartment",
+    "subTypes": [
+      "Ground Floor",
+      "Middle Floor",
+      "Top Floor",
+      "Penthouse",
+      "Penthouse Duplex",
+      "Duplex",
+      "Ground Floor Studio",
+      "Middle Floor Studio",
+      "Top Floor Studio"
+    ]
+  },
+  {
+    "type": "House",
+    "subTypes": [
+      "Villa",
+      "Semi-detached House",
+      "Terraced Townhouse",
+      "Finca",
+      "Bungalow",
+      "Quad",
+      "Castle",
+      "City Palace",
+      "Wooden Cabin",
+      "Wooden House",
+      "Mobile Home",
+      "Cave House"
+    ]
+  },
+  {
+    "type": "Plot",
+    "subTypes": [
+      "Residential",
+      "Commercial",
+      "Land",
+      "Land With Ruin"
+    ]
+  },
+  {
+    "type": "Commercial",
+    "subTypes": [
+      "Bar",
+      "Restaurant",
+      "Café",
+      "Hotel",
+      "Hostel",
+      "Guesthouse",
+      "Bed and Breakfast",
+      "Shop",
+      "Office",
+      "Storage Room",
+      "Parking Space",
+      "Farm",
+      "Nightclub",
+      "Warehouse",
+      "Garage",
+      "Business",
+      "Mooring",
+      "Stables",
+      "Kiosk",
+      "Chiringuito",
+      "Beach Bar",
+      "Mechanics",
+      "Hairdressers",
+      "Photography Studio",
+      "Laundry",
+      "Aparthotel",
+      "Apartment Complex",
+      "Residential Home",
+      "Vineyard",
+      "Olive Grove",
+      "Car Park",
+      "Commercial Premises",
+      "Campsite",
+      "With Residence",
+      "Building",
+      "Other"
+    ]
+  }
+]

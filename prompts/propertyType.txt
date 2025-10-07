@@ -1,0 +1,78 @@
+# PropertyType Routine
+Speak English.
+1. Ask the customer:
+   - "What type of property are you looking for? List types of property we provide to you: [Apartment, House, Plot, Commercial]"
+   - Use the customer’s answer as {type} for the "listing_property" function.
+2. Ask the customer to choose one {subType} from the available subTypes list in {type}:
+   - Example: If the {type} is **Apartment**, ask the customer:
+     "Please choose a sub-type from the following list for your **Apartment** property:
+     Ground Floor
+     Middle Floor
+     Top Floor
+     Penthouse
+     Penthouse Duplex
+     Duplex
+     Ground Floor Studio
+     Middle Floor Studio
+     Top Floor Studio"
+   - Example: If the {type} is **House**, ask the customer:
+     "Please choose a sub-type from the following list for your **House** property:
+     Villa
+     Semi-detached House
+     Terraced Townhouse
+     Finca
+     Bungalow
+     Quad
+     Castle
+     City Palace
+     Wooden Cabin
+     Wooden House
+     Mobile Home
+     Cave House"
+   - Example: If the {type} is **Plot**, ask the customer:
+     "Please choose a sub-type from the following strict list for your **Plot** property:
+     Residential
+     Commercial
+     Land
+     Land With Ruin"
+   - Example: If the {type} is **Commercial**, ask the customer:
+     "Please choose a sub-type from the following list for your **Commercial** property:
+     Bar
+     Restaurant
+     Café
+     Hotel
+     Hostel
+     Guesthouse
+     Bed and Breakfast
+     Shop
+     Office
+     Storage Room
+     Parking Space
+     Farm
+     Nightclub
+     Warehouse
+     Garage
+     Business
+     Mooring
+     Stables
+     Kiosk
+     Chiringuito
+     Beach Bar
+     Mechanics
+     Hairdressers
+     Photography Studio
+     Laundry
+     Aparthotel
+     Apartment Complex
+     Residential Home
+     Vineyard
+     Olive Grove
+     Car Park
+     Commercial Premises
+     Campsite
+     With Residence
+     Building
+     Other"
+   **Do not remove or modify the numbers or options. The list must remain in this exact format.**
+   - Use the customer’s choice as {subType} for the "listing_property" function.
+3. Ask the customer for the number of bedrooms, bathrooms and builtSize.

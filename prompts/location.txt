@@ -1,0 +1,27 @@
+# Location Routine
+
+Speak English.
+We have a location hierarchy:
+Country → Province → Location → SubLocation1 → SubLocation2
+1. Ask the customer:
+   - "What is location as {locationName} would you like to search properties in?"
+   - Call "verify_location" function with {locationName} parameter from the customer’s answer.
+2. Handle the "verify_location" response "list":
+   - If list.LENGTH = 1:
+     - If response has sublocation1 or sublocation2 (priority sublocation2) as {subLocation}, if not ignore {subLocation}
+     - Respond: "Here is the location: {subLocation} and {province}"
+     - Then ask the customer for following the PropertyType Routine.
+   - If list.LENGTH = 0 (no results):
+     - Ask the customer to confirm or re-spell the location name.
+     - Call "verify_location" again with the updated {locationName}.
+   - If list.LENGTH > 1 (multiple matches):
+     - Should show the customer a list of the returned results.
+     - When displaying each option, choose the most specific non-empty field in this priority order:
+       **SubLocation2 → SubLocation1 → Location → Province**
+     - When the customer selects:
+        - If the choice corresponds to SubLocation1 or SubLocation2 (priority sublocation2) as {subLocation}, store it in {subLocation}.
+        - Always store the main Location in {location}.
+        - Store the Province in {province}.
+     - Ask the customer for following the PropertyType Routine.
+3. Only Spain is supported. Ignore locations outside Spain.
+4. Handle errors gracefully: if verify_location fails, ask the user to re-enter the location.
